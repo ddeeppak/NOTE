@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+.note-card {
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+.note-card:hover {
+  transform: translateY(-5px) rotateX(2deg) rotateY(2deg);
+}
+
+.calendar-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.calendar-card:hover {
+  transform: scale(1.02);
+}
+
+.note-editor-container {
+  transition: all 0.3s ease;
+}
+
+.note-editor-container:focus-within {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+}
+
+.save-button-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
